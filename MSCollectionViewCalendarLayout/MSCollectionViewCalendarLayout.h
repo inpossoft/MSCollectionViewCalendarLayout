@@ -54,6 +54,8 @@ typedef NS_ENUM(NSUInteger, MSHeaderLayoutType) {
 
 @property (nonatomic, weak) id <MSCollectionViewDelegateCalendarLayout> delegate;
 
+@property (nonatomic, strong) NSNumber *startHour;
+@property (nonatomic, strong) NSNumber *endHour;
 @property (nonatomic) CGFloat sectionWidth;
 @property (nonatomic) CGFloat hourHeight;
 @property (nonatomic) CGFloat dayColumnHeaderHeight;

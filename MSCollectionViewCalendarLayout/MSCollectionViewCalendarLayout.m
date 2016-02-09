@@ -1099,6 +1099,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)earliestHour
 {
+	if (self.startHour) {
+		return self.startHour.integerValue;
+	}
     if (self.cachedEarliestHour != NSIntegerMax) {
         return self.cachedEarliestHour;
     }
@@ -1119,6 +1122,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)latestHour
 {
+	if (self.endHour) {
+		return self.endHour.integerValue;
+	}
     if (self.cachedLatestHour != NSIntegerMin) {
         return self.cachedLatestHour;
     }
@@ -1139,6 +1145,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)earliestHourForSection:(NSInteger)section
 {
+	if (self.startHour) {
+		return self.startHour.integerValue;
+	}
     if (self.cachedEarliestHours[@(section)]) {
         return [self.cachedEarliestHours[@(section)] integerValue];
     }
@@ -1160,6 +1169,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)latestHourForSection:(NSInteger)section
 {
+	if (self.endHour) {
+		return self.endHour.integerValue;
+	}
     if (self.cachedLatestHours[@(section)]) {
         return [self.cachedLatestHours[@(section)] integerValue];
     }
