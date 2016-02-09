@@ -383,7 +383,7 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
     
     // Horizontal Gridlines
     NSUInteger horizontalGridlineIndex = 0;
-    for (NSInteger hour = earliestHour; hour <= latestHour; hour++) {
+    for (NSInteger hour = earliestHour; hour <= latestHour + 1; hour++) {
         NSIndexPath *horizontalGridlineIndexPath = [NSIndexPath indexPathForItem:horizontalGridlineIndex inSection:0];
         UICollectionViewLayoutAttributes *horizontalGridlineAttributes = [self layoutAttributesForDecorationViewAtIndexPath:horizontalGridlineIndexPath ofKind:MSCollectionElementKindHorizontalGridline withItemCache:self.horizontalGridlineAttributes];
         CGFloat horizontalGridlineMinY = nearbyintf(calendarContentMinY + (self.hourHeight * (hour - earliestHour))) - (self.horizontalGridlineHeight / 2.0);
@@ -518,7 +518,7 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         // Horizontal Gridlines
         if (needsToPopulateHorizontalGridlineAttributes) {
             NSUInteger horizontalGridlineIndex = 0;
-            for (NSInteger hour = earliestHour; hour <= latestHour; hour++) {
+            for (NSInteger hour = earliestHour; hour <= latestHour + 1; hour++) {
                 NSIndexPath *horizontalGridlineIndexPath = [NSIndexPath indexPathForItem:horizontalGridlineIndex inSection:section];
                 UICollectionViewLayoutAttributes *horizontalGridlineAttributes = [self layoutAttributesForDecorationViewAtIndexPath:horizontalGridlineIndexPath ofKind:MSCollectionElementKindHorizontalGridline withItemCache:self.horizontalGridlineAttributes];
                 // Frame
